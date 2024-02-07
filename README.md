@@ -4,7 +4,7 @@
 
 This repository contains a reproduction of the `DEADLINE_EXCEEDED` error that
 occurs when using the `@google-cloud/pubsub` library in Node.js to consume
-messages from a Pub/Sub subscription using the `v1.Subscriber` API.
+messages from a Pub/Sub subscription using the `v1.SubscriberClient` API.
 
 Note that the `DEADLINE_EXCEEDED` **error does not occur** when using the
 latest Subscriber from this library. This repository contains both a v1 and
@@ -29,7 +29,7 @@ gcloud pubsub topics create $PUB_SUB_TOPIC_ID --project $GOOGLE_CLOUD_PROJECT
 gcloud pubsub subscriptions create $PUB_SUB_SUBSCRIPTION_ID --topic $PUB_SUB_TOPIC_ID
 ```
 
-### v1 Publisher and Subscriber
+### v1 PublisherClient and SubscriberClient
 
 Start the publisher and subscriber in separate terminals, and **wait 15 minutes**
 for the `DEADLINE_EXCEEDED` error to occur in the subscriber.
